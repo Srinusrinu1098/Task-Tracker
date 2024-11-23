@@ -37,8 +37,20 @@ export const TaskProvider = ({ children }) => {
     alert("Tasks saved to local storage!");
   };
 
+  const sortingTheTask = (status)=>{
+    const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+    if(status ==="All"){
+        setTasks(savedTasks)
+    }else{
+        const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+        setTasks(savedTasks.filter((task) => task.status === status));
+    }
+   
+
+  }
+
   return (
-    <TaskContext.Provider value={{ tasks, addTask, updateTask, deleteTask,saveTasksToLocalStorage  }}>
+    <TaskContext.Provider value={{ tasks, addTask, updateTask, deleteTask,saveTasksToLocalStorage,sortingTheTask  }}>
       {children}
     </TaskContext.Provider>
   );

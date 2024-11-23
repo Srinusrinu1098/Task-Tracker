@@ -1,14 +1,18 @@
 import React, { useState, useContext } from "react";
 import { TaskContext } from "../../TaskContext";
+import './TaskForm.css';
+
 
 const TaskForm = () => {
-  const { addTask } = useContext(TaskContext);
+  const { addTask} = useContext(TaskContext);
   const [form, setForm] = useState({
     title: "",
     description: "",
     dueDate: "",
     status: "Pending",
   });
+
+  
 
   const handleInputChange = (e) => {
     setForm({
@@ -58,6 +62,9 @@ const TaskForm = () => {
         <option value="Completed">Completed</option>
       </select>
       <button type="submit">Add Task</button>
+
+      
+      
     </form>
   );
 };

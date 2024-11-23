@@ -8,6 +8,7 @@ function App() {
   return (
     <TaskProvider>
       <div>
+        <h2>Task Tracker</h2>
         <TaskForm />
         <TaskList />
       </div>
